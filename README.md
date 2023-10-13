@@ -15,9 +15,17 @@ Below are the test cases
 - Test with input string as *None*
 - Test with input string of single char (Example: *A*)
 
-## Usage
+## GitHub Action Workflow
 ---
-This sample can be cloned, and run using python 3.8 or above.
+This can be tested with running the GitHub action [workflow](https://github.com/kumvijaya/py-string-inverter/actions/workflows/build.yml). This runs and publishes the test results in job summary.
+
+## Local testing
+---
+This sample can be cloned in local, and run using below command with python 3.8.
+
+```
+python -m pytest
+```
 
 ## License
 ---
