@@ -1,7 +1,6 @@
 name: String inverter Build
 
 on:
-    workflow_call:
     workflow_dispatch:
     push:
       branches: [main]
@@ -9,11 +8,11 @@ on:
       branches: [main]
 
 jobs:
-  django_build:
+  string_inverter_build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
+      - name: Checkout
+        uses: actions/checkout@v3
       - name: Setup Python
         uses: actions/setup-python@v2
         with:
