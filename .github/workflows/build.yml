@@ -27,29 +27,40 @@ jobs:
         run: |
             python -m pytest --junit-xml test-results.xml
 
-      - uses: dariocurr/pytest-summary@main
-        with:
-          paths: test_**.py
+      - name: Report via Environment
+        env:
+          pytest_github_report: true
+          pytest_report_title: ":unicorn: Report With Custom Emojis :unicorn:"
+          pytest_passed_emoji: ":green_heart:"
+          pytest_failed_emoji: ":heart:"
+          pytest_xpassed_emoji: ":bangbang:"
+          pytest_xfailed_emoji: ":bangbang:"
+          pytest_skipped_emoji: ":shipit:"
+        run: pytest
 
-      - name: Post test results
-        if: always()
-        uses: pmeier/pytest-results-action@main
-        with:
-          # A list of JUnit XML files, directories containing the former, and wildcard
-          # patterns to process.
-          # See @actions/glob for supported patterns.
-          path: test-results.xml
+      # - uses: dariocurr/pytest-summary@main
+      #   with:
+      #     paths: test_**.py
+
+      # - name: Post test results
+      #   if: always()
+      #   uses: pmeier/pytest-results-action@main
+      #   with:
+      #     # A list of JUnit XML files, directories containing the former, and wildcard
+      #     # patterns to process.
+      #     # See @actions/glob for supported patterns.
+      #     path: test-results.xml
       
-          # Add a summary of the results at the top of the report
-          # Default: true
-          summary: true
+      #     # Add a summary of the results at the top of the report
+      #     # Default: true
+      #     summary: true
       
-          # Select which results should be included in the report.
-          # Follows the same syntax as
-          # `pytest -r`
-          # Default: fEX
-          display-options: fEX
+      #     # Select which results should be included in the report.
+      #     # Follows the same syntax as
+      #     # `pytest -r`
+      #     # Default: fEX
+      #     display-options: fEX
       
-          # Fail the workflow if no JUnit XML was found.
-          # Default: true
-          fail-on-empty: true
+      #     # Fail the workflow if no JUnit XML was found.
+      #     # Default: true
+      #     fail-on-empty: true
