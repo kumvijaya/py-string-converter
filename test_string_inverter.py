@@ -1,5 +1,5 @@
 """
-Unit tests for invert
+Unit tests for invert function
 """
 
 from string_inverter import invert

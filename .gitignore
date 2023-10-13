@@ -11,6 +11,9 @@ __pycache__/
 # C extensions
 *.so
 
+# Test results
+*_results.xml
+
 # Distribution / packaging
 .Python
 build/
