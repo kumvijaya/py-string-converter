@@ -27,7 +27,6 @@ jobs:
         run: |
             python -m pytest --junit-xml test-results.xml
 
-
       - name: Post test results
         if: always()
         uses: pmeier/pytest-results-action@main

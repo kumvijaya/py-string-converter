@@ -12,7 +12,7 @@ __pycache__/
 *.so
 
 # Test results
-*_results.xml
+*-results.xml
 
 # Distribution / packaging
 .Python
